@@ -1,4 +1,3 @@
-package studentmanagent;
 
 import java.awt.Color;
 import java.awt.Font;
