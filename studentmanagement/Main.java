@@ -21,10 +21,10 @@ final class Main {
     private JButton sidepanelbtn[];
     private JButton submitbtn;
     String value;
-    private JButton searchstudentbtn;
+    // private JButton searchstudentbtn;
     private JButton resetpassword;
     private JButton button[], hallticketsearchbtn;
-
+    private boolean accesstoken = false;
     private JPanel panels0, searchstudentpanel;
     private int i = 0;
     private String serif = "Serif";
@@ -242,6 +242,42 @@ final class Main {
         });
     }
 
+    void deletestudentdata() {
+
+    }
+
+    void deletescore() {
+
+    }
+
+    void addnewstudent() {
+
+    }
+
+    void addnewsubject() {
+
+    }
+
+    void updatestudentname() {
+
+    }
+
+    void updatehallticket() {
+
+    }
+
+    void showallstudent() {
+
+    }
+
+    void registernewstudent() {
+
+    }
+
+    void addnewsemister() {
+
+    }
+
     String access(int actionkey) {
         Connection connect = null;
         try {
@@ -277,6 +313,7 @@ final class Main {
                         if (rs.next()) {
                             // dispose();
                             JOptionPane.showMessageDialog(submitbtn, "You have successfully logged in");
+                            accesstoken = true;
                         }
                     } finally {
                         JOptionPane.showMessageDialog(submitbtn, "Wrong ID & Password");
