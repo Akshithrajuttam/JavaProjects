@@ -25,7 +25,7 @@ final class Main {
     private JButton resetpassword;
     private JButton button[], hallticketsearchbtn;
     private boolean accesstoken = false;
-    private JPanel panels0, searchstudentpanel;
+    private JPanel panels0, searchstudentpanel, managemenet;
     private int i = 0;
     private String serif = "Serif";
 
@@ -159,48 +159,166 @@ final class Main {
         button = new JButton[10];
         button[0] = new JButton("search student");
         button[0].setBounds(120, 200, 250, 28);
-
         button[1] = new JButton("Update student name");
         button[1].setBounds(420, 200, 250, 28);
-
         button[2] = new JButton("Delete Student Data");
-        button[2].setForeground(Color.white);
         button[2].setBounds(120, 250, 250, 28);
-
         button[3] = new JButton("Update Hallticket");
-        // button[3].setBackground(Color.lightGray);
-
         button[3].setBounds(420, 250, 250, 28);
-
-        button[4] = new JButton("Update Score");
-        // button[4].setBackground(Color.lightGray);
-
+        button[4] = new JButton("Update Score &add score");
         button[4].setBounds(120, 300, 250, 28);
-
         button[5] = new JButton("Show all students");
-
         button[5].setBounds(420, 300, 250, 28);
-
-        button[6] = new JButton("Add a new student");
-
+        button[6] = new JButton("register student");
         button[6].setBounds(120, 350, 250, 28);
-
-        button[7] = new JButton("Add a new semister");
-
+        button[7] = new JButton("New semister");
         button[7].setBounds(420, 350, 250, 28);
-
         button[8] = new JButton("Add a new subject");
         button[8].setBounds(120, 400, 250, 28);
-
-        button[9] = new JButton("Add Student");
+        button[9] = new JButton("Help");
         button[9].setBounds(420, 400, 250, 28);
         for (int i = 0; i < 10; i++) {
-            button[i].addActionListener(actions);
             button[i].setBackground(Color.darkGray);
             button[i].setForeground(Color.white);
             panels0.add(button[i]);
-        }
+            button[i].addActionListener(actions);
 
+        }
+    }
+
+    // one method to get code resulability approch with complex
+    void management(int tokenkey) {
+        // adding Japanel finel
+        managemenet = new JPanel();
+        managemenet.setBackground(Color.orange);
+        managemenet.setLayout(null);
+        managemenet.setBounds(180, 30, 890, 600);
+        managemenet.setVisible(true);
+        window.add(managemenet);
+        // working
+        accesstoken = true;
+        if (accesstoken = true) {
+            switch (tokenkey) {
+                case 0:
+                    // search student
+                    label3 = new JLabel("Enter Hallticket of an student");
+                    label3.setBounds(120, 20, 250, 150);
+                    managemenet.add(label3);
+
+                    hallticket = new JTextField();
+                    hallticket.setBounds(120, 170, 170, 25);
+                    managemenet.add(hallticket);
+                    hallticketsearchbtn = new JButton("Search");
+                    hallticketsearchbtn.setBounds(120, 210, 170, 28);
+
+                    managemenet.add(hallticketsearchbtn);
+                    hallticketsearchbtn.addActionListener(new ActionListener() {
+
+                        public void actionPerformed(ActionEvent e) {
+                            label2 = new JLabel("----Details----");
+                            label2.setBounds(310, 20, 250, 250);
+                            managemenet.add(label2);
+                            JTextPane tfd = new JTextPane();
+                            tfd.setText(access(1));
+                            tfd.setBackground(null);
+                            tfd.setForeground(Color.BLACK);
+                            // JTextField tfd = new JTextField(access(1));
+                            tfd.setFont(new Font("Sans-Serif", Font.BOLD, 28));
+                            tfd.setBounds(310, 210, 400, 150);
+                            managemenet.add(tfd);
+                        }
+                    });
+                    break;
+                case 1:
+                    // update student name
+                    label3 = new JLabel("Enter Hallticket of an student");
+                    label3.setBounds(120, 20, 250, 150);
+                    managemenet.add(label3);
+
+                    hallticket = new JTextField();
+                    hallticket.setBounds(120, 170, 170, 25);
+                    managemenet.add(hallticket);
+                    hallticketsearchbtn = new JButton("Search");
+                    hallticketsearchbtn.setBounds(120, 210, 170, 28);
+
+                    managemenet.add(hallticketsearchbtn);
+                    hallticketsearchbtn.addActionListener(new ActionListener() {
+
+                        public void actionPerformed(ActionEvent e) {
+                            label2 = new JLabel("----Details----");
+                            label2.setBounds(310, 20, 250, 250);
+                            managemenet.add(label2);
+                            JTextPane tfd = new JTextPane();
+                            tfd.setText(access(1));
+                            tfd.setBackground(null);
+                            tfd.setForeground(Color.BLACK);
+                            // JTextField tfd = new JTextField(access(1));
+                            tfd.setFont(new Font("Sans-Serif", Font.BOLD, 28));
+                            tfd.setBounds(310, 210, 400, 150);
+                            managemenet.add(tfd);
+                        }
+                    });
+                    break;
+                case 2:
+                    // wipe student data and undo redo changes
+                    label3 = new JLabel("Enter Hallticket of an student");
+                    label3.setBounds(120, 20, 250, 150);
+                    managemenet.add(label3);
+
+                    hallticket = new JTextField();
+                    hallticket.setBounds(120, 170, 170, 25);
+                    managemenet.add(hallticket);
+                    hallticketsearchbtn = new JButton("Search");
+                    hallticketsearchbtn.setBounds(120, 210, 170, 28);
+
+                    managemenet.add(hallticketsearchbtn);
+                    hallticketsearchbtn.addActionListener(new ActionListener() {
+
+                        public void actionPerformed(ActionEvent e) {
+                            label2 = new JLabel("----Details----");
+                            label2.setBounds(310, 20, 250, 250);
+                            managemenet.add(label2);
+                            JTextPane tfd = new JTextPane();
+                            tfd.setText(access(1));
+                            tfd.setBackground(null);
+                            tfd.setForeground(Color.BLACK);
+                            // JTextField tfd = new JTextField(access(1));
+                            tfd.setFont(new Font("Sans-Serif", Font.BOLD, 28));
+                            tfd.setBounds(310, 210, 400, 150);
+                            managemenet.add(tfd);
+                        }
+                    });
+                    break;
+                case 3:
+                    // update hallticket
+                    break;
+                case 4:
+                    // update score and enter new score to student
+                    break;
+                case 5:
+                    // show all student
+
+                    break;
+                case 6:
+                    // register new student
+                    break;
+                case 7:
+                    // add new semister
+                    break;
+                case 8:
+                    // add new subject with semister
+                    break;
+                case 9:
+                    // help
+                    break;
+                default:
+                    break;
+
+            }
+        } else {
+            // redirects to user login system
+            userlogin();
+        }
     }
 
     // search student method
@@ -243,39 +361,41 @@ final class Main {
     }
 
     void deletestudentdata() {
+        searchstudentpanel = new JPanel();
+        searchstudentpanel.setBackground(Color.orange);
+        searchstudentpanel.setVisible(true);
+        searchstudentpanel.setLayout(null);
+        searchstudentpanel.setBounds(180, 30, 890, 600);
+        window.add(searchstudentpanel);
 
-    }
+        // buttons and test area
+        label3 = new JLabel("Enter Hallticket of an student");
+        label3.setBounds(120, 20, 250, 150);
+        searchstudentpanel.add(label3);
 
-    void deletescore() {
+        hallticket = new JTextField();
+        hallticket.setBounds(120, 170, 170, 25);
+        searchstudentpanel.add(hallticket);
+        hallticketsearchbtn = new JButton("Search");
+        hallticketsearchbtn.setBounds(120, 210, 170, 28);
 
-    }
+        searchstudentpanel.add(hallticketsearchbtn);
+        hallticketsearchbtn.addActionListener(new ActionListener() {
 
-    void addnewstudent() {
-
-    }
-
-    void addnewsubject() {
-
-    }
-
-    void updatestudentname() {
-
-    }
-
-    void updatehallticket() {
-
-    }
-
-    void showallstudent() {
-
-    }
-
-    void registernewstudent() {
-
-    }
-
-    void addnewsemister() {
-
+            public void actionPerformed(ActionEvent e) {
+                label2 = new JLabel("----Details----");
+                label2.setBounds(310, 20, 250, 250);
+                searchstudentpanel.add(label2);
+                JTextPane tfd = new JTextPane();
+                tfd.setText(access(1));
+                tfd.setBackground(null);
+                tfd.setForeground(Color.BLACK);
+                // JTextField tfd = new JTextField(access(1));
+                tfd.setFont(new Font("Sans-Serif", Font.BOLD, 28));
+                tfd.setBounds(310, 210, 400, 150);
+                searchstudentpanel.add(tfd);
+            }
+        });
     }
 
     String access(int actionkey) {
@@ -339,16 +459,42 @@ final class Main {
     private ActionListener actions = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-
             if (e.getSource() == submitbtn) {
                 userlogin.setVisible(false);
                 userhome();
                 // access(2);
             } else if (e.getSource() == button[0]) {
                 panels0.setVisible(false);
-                searchstudentmethond();
-
+                // searchstudentmethond();
+                management(0);
                 // sidepane.setVisible(true);
+            } else if (e.getSource() == button[1]) {
+                panels0.setVisible(false);
+                management(1);
+            } else if (e.getSource() == button[2]) {
+                panels0.setVisible(false);
+                management(2);
+            } else if (e.getSource() == button[3]) {
+                panels0.setVisible(false);
+                management(3);
+            } else if (e.getSource() == button[4]) {
+                panels0.setVisible(false);
+                management(4);
+            } else if (e.getSource() == button[5]) {
+                panels0.setVisible(false);
+                management(5);
+            } else if (e.getSource() == button[6]) {
+                panels0.setVisible(false);
+                management(6);
+            } else if (e.getSource() == button[7]) {
+                panels0.setVisible(false);
+                management(7);
+            } else if (e.getSource() == button[8]) {
+                panels0.setVisible(false);
+                management(8);
+            } else if (e.getSource() == button[9]) {
+                panels0.setVisible(false);
+                management(9);
             }
         }
     };
